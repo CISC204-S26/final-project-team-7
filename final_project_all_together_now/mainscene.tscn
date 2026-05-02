@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://beb1bsu6stuw3"]
+
+[ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="1_wtdyi"]
+
+[node name="Node2D" type="Node2D" unique_id=1659452378]
+
+[node name="DRACULA" type="Sprite2D" parent="." unique_id=1265895628]
+position = Vector2(213.75, 268.5)
+scale = Vector2(3.5210526, 3.28125)
+texture = ExtResource("1_wtdyi")
