@@ -1,10 +1,36 @@
 [gd_scene format=3 uid="uid://beb1bsu6stuw3"]
 
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="1_dn5c8"]
 [ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="1_wtdyi"]
+[ext_resource type="Script" uid="uid://b78xov0adurei" path="res://dracbody.gd" id="2_5lfti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbvtr"]
+size = Vector2(116, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl65m"]
+size = Vector2(97.18895, 96.84213)
 
 [node name="Node2D" type="Node2D" unique_id=1659452378]
 
-[node name="DRACULA" type="Sprite2D" parent="." unique_id=1265895628]
-position = Vector2(213.75, 268.5)
-scale = Vector2(3.5210526, 3.28125)
+[node name="godotguybody" type="CharacterBody2D" parent="." unique_id=355929840]
+
+[node name="godotguycoll" type="CollisionShape2D" parent="godotguybody" unique_id=1745874851]
+position = Vector2(401, 161.5)
+shape = SubResource("RectangleShape2D_sbvtr")
+
+[node name="godotguysprite" type="Sprite2D" parent="godotguybody" unique_id=2087591654]
+position = Vector2(400, 163)
+texture = ExtResource("1_dn5c8")
+
+[node name="dracbody" type="CharacterBody2D" parent="." unique_id=112763209]
+script = ExtResource("2_5lfti")
+
+[node name="draccoll" type="CollisionShape2D" parent="dracbody" unique_id=1102485896]
+position = Vector2(100.50001, 167.5)
+scale = Vector2(1.1421052, 1.1875)
+shape = SubResource("RectangleShape2D_fl65m")
+
+[node name="dracsprite" type="Sprite2D" parent="dracbody" unique_id=1265895628]
+position = Vector2(100.75001, 168)
+scale = Vector2(1.1421052, 1.1875)
 texture = ExtResource("1_wtdyi")
