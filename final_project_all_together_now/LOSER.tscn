@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cnoxj7mtbqlk5"]
+
+[node name="Node2D" type="Node2D" unique_id=1563477413]
+
+[node name="YOULOST" type="RichTextLabel" parent="." unique_id=1412114185]
+offset_right = 1157.0
+offset_bottom = 661.0
+theme_override_font_sizes/normal_font_size = 128
+text = "YOU LOST!"
+horizontal_alignment = 1
+vertical_alignment = 1

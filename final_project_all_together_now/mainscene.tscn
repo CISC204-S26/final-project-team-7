@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="1_wtdyi"]
 [ext_resource type="Script" uid="uid://b78xov0adurei" path="res://dracbody.gd" id="2_5lfti"]
 [ext_resource type="Texture2D" uid="uid://bk83eki4f6t8n" path="res://mcgrass.webp" id="4_5lfti"]
+[ext_resource type="Script" uid="uid://1m5ep6oeinn3" path="res://enemy.gd" id="6_76yo1"]
+[ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="7_8bn17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbvtr"]
 size = Vector2(116, 115)
@@ -13,47 +15,71 @@ size = Vector2(116, 115)
 size = Vector2(97.18895, 96.84213)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76yo1"]
-size = Vector2(1147, 71)
+size = Vector2(1218, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ftms"]
+size = Vector2(114, 606)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lhry"]
+size = Vector2(73.25, 578)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ibrq"]
+size = Vector2(1187, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bn17"]
 size = Vector2(76.25, 61)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ftms"]
+radius = 30.463093
+
 [node name="Node2D" type="Node2D" unique_id=1659452378]
 
-[node name="godotguybody" type="CharacterBody2D" parent="." unique_id=355929840]
+[node name="p1" type="CharacterBody2D" parent="." unique_id=355929840]
 script = ExtResource("1_sbvtr")
 
-[node name="godotguycoll" type="CollisionShape2D" parent="godotguybody" unique_id=1745874851]
+[node name="p1coll" type="CollisionShape2D" parent="p1" unique_id=1745874851]
 position = Vector2(401, 161.5)
 shape = SubResource("RectangleShape2D_sbvtr")
 
-[node name="godotguysprite" type="Sprite2D" parent="godotguybody" unique_id=2087591654]
+[node name="p1sprite" type="Sprite2D" parent="p1" unique_id=2087591654]
 position = Vector2(400, 163)
 texture = ExtResource("1_dn5c8")
 
-[node name="dracbody" type="CharacterBody2D" parent="." unique_id=112763209]
+[node name="p2" type="CharacterBody2D" parent="." unique_id=112763209]
 script = ExtResource("2_5lfti")
 
-[node name="draccoll" type="CollisionShape2D" parent="dracbody" unique_id=1102485896]
+[node name="p2coll" type="CollisionShape2D" parent="p2" unique_id=1102485896]
 position = Vector2(100.50001, 167.5)
 scale = Vector2(1.1421052, 1.1875)
 shape = SubResource("RectangleShape2D_fl65m")
 
-[node name="dracsprite" type="Sprite2D" parent="dracbody" unique_id=1265895628]
+[node name="p2sprite" type="Sprite2D" parent="p2" unique_id=1265895628]
 position = Vector2(100.75001, 168)
 scale = Vector2(1.1421052, 1.1875)
 texture = ExtResource("1_wtdyi")
 
-[node name="ground" type="StaticBody2D" parent="." unique_id=1971953363]
+[node name="barriers" type="StaticBody2D" parent="." unique_id=1971953363]
 
-[node name="Mcgrass" type="Sprite2D" parent="ground" unique_id=631184355]
+[node name="Mcgrass" type="Sprite2D" parent="barriers" unique_id=631184355]
 position = Vector2(587, 637)
 scale = Vector2(1, 0.1475)
 texture = ExtResource("4_5lfti")
 
-[node name="groundcoll" type="CollisionShape2D" parent="ground" unique_id=432062216]
-position = Vector2(572, 589)
+[node name="groundcoll" type="CollisionShape2D" parent="barriers" unique_id=432062216]
+position = Vector2(579, 589)
 shape = SubResource("RectangleShape2D_76yo1")
+
+[node name="leftcoll" type="CollisionShape2D" parent="barriers" unique_id=1497030487]
+position = Vector2(-60, 292)
+shape = SubResource("RectangleShape2D_1ftms")
+
+[node name="rightcoll" type="CollisionShape2D" parent="barriers" unique_id=1958516909]
+position = Vector2(1180.625, 293)
+shape = SubResource("RectangleShape2D_0lhry")
+
+[node name="ceilingcoll" type="CollisionShape2D" parent="barriers" unique_id=1453045504]
+position = Vector2(583.5, -21.5)
+shape = SubResource("RectangleShape2D_0ibrq")
 
 [node name="obstacle" type="StaticBody2D" parent="." unique_id=1336395345]
 
@@ -65,3 +91,16 @@ texture = ExtResource("4_5lfti")
 [node name="grasscoll" type="CollisionShape2D" parent="obstacle" unique_id=698543169]
 position = Vector2(547.875, 512.5)
 shape = SubResource("RectangleShape2D_8bn17")
+
+[node name="enemy" type="CharacterBody2D" parent="." unique_id=355645208]
+motion_mode = 1
+script = ExtResource("6_76yo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy" unique_id=2099978824]
+position = Vector2(845, 355)
+scale = Vector2(0.09537032, 0.08796296)
+texture = ExtResource("7_8bn17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=1008678902]
+position = Vector2(841, 357)
+shape = SubResource("CircleShape2D_1ftms")
