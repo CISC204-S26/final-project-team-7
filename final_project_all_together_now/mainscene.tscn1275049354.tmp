@@ -106,4 +106,4 @@ position = Vector2(841, 357)
 shape = SubResource("CircleShape2D_1ftms")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=522301994]
-position = Vector2(551, 394)
+position = Vector2(115, 439)

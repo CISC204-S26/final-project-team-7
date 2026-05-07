@@ -1,23 +1,29 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
-var direction: Vector2 = Vector2.ZERO
+@export var speed := 80
+
+var direction := Vector2.ZERO
+var change_timer := 0.0
 
 func _ready():
-	direction = Vector2(
-		randf_range(-1,1),
-		randf_range(-1,1)
-	).normalized()
+	pick_new_direction()
+
+func _physics_process(delta):
+
+	change_timer -= delta
+
+	if change_timer <= 0:
+		pick_new_direction()
+
+	velocity = direction * speed
+	move_and_slide()
+
+	# bounce off walls
+	if is_on_wall():
+		direction = -direction
 
 
-func _physics_process(delta: float) -> void:
-	var velocity_vector = direction * speed * delta
-	var collision = move_and_collide(velocity_vector)
-	if collision:
-		direction = direction.reflect(collision.get_normal())
-		position += collision.get_normal()* 1.0
-		var collider = collision.get_collider()
-		if collider.name.begins_with("p1") or collider.name.begins_with("p2"):
-			get_tree().change_scene_to_file("res://LOSER.tscn")
-		var remainder = collision.get_remainder().reflect(collision.get_normal())
-		move_and_collide(remainder)
+func pick_new_direction():
+	var angle = randf() * TAU
+	direction = Vector2(cos(angle), sin(angle))
+	change_timer = randf_range(1.0, 3.0)
