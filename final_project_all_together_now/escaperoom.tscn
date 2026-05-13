@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ccgyk3mqu8edl"]
+
+[ext_resource type="Script" uid="uid://v87q2nx3xefx" path="res://godotguybody.gd" id="1_itap8"]
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="2_3st5j"]
+[ext_resource type="Script" uid="uid://b78xov0adurei" path="res://dracbody.gd" id="3_wsudi"]
+[ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="4_p8y5c"]
+[ext_resource type="Script" uid="uid://1m5ep6oeinn3" path="res://enemy.gd" id="5_r6gcm"]
+[ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="6_jkq5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dxa5"]
+size = Vector2(116, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ep5y"]
+size = Vector2(97.18895, 96.84213)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3dgf"]
+radius = 30.463093
+
+[node name="Escaperoom" type="Node2D" unique_id=984202914]
+
+[node name="p1" type="CharacterBody2D" parent="." unique_id=350430887 groups=["player"]]
+script = ExtResource("1_itap8")
+
+[node name="p1sprite" type="Sprite2D" parent="p1" unique_id=225060837]
+position = Vector2(234, 540)
+texture = ExtResource("2_3st5j")
+
+[node name="p1coll" type="CollisionShape2D" parent="p1" unique_id=2095882663]
+position = Vector2(235, 538.5)
+shape = SubResource("RectangleShape2D_1dxa5")
+
+[node name="p2" type="CharacterBody2D" parent="." unique_id=1833272870 groups=["player"]]
+script = ExtResource("3_wsudi")
+
+[node name="p2sprite" type="Sprite2D" parent="p2" unique_id=1576277859]
+position = Vector2(100.75001, 168)
+scale = Vector2(1.1421052, 1.1875)
+texture = ExtResource("4_p8y5c")
+
+[node name="p2coll" type="CollisionShape2D" parent="p2" unique_id=531317847]
+position = Vector2(100.50001, 167.5)
+scale = Vector2(1.1421052, 1.1875)
+shape = SubResource("RectangleShape2D_4ep5y")
+
+[node name="enemy" type="CharacterBody2D" parent="." unique_id=1454451510]
+motion_mode = 1
+script = ExtResource("5_r6gcm")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy" unique_id=759421591]
+position = Vector2(845, 355)
+scale = Vector2(0.09537032, 0.08796296)
+texture = ExtResource("6_jkq5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=1949702245]
+position = Vector2(841, 357)
+shape = SubResource("CircleShape2D_t3dgf")
