@@ -130,6 +130,28 @@ position = Vector2(-1986.8851, 32.78688)
 scale = Vector2(231.14874, 6.8769155)
 shape = SubResource("RectangleShape2D_h41xc")
 
+[node name="Divider2" type="CollisionShape2D" parent="Maze/DividerWalls" unique_id=499084734]
+position = Vector2(-1986.8851, -1078.6885)
+scale = Vector2(231.14874, 6.8769155)
+shape = SubResource("RectangleShape2D_h41xc")
+
+[node name="Divider3" type="CollisionShape2D" parent="Maze/DividerWalls" unique_id=673240049]
+position = Vector2(-1986.8851, 1098.3606)
+scale = Vector2(231.14874, 6.8769155)
+shape = SubResource("RectangleShape2D_h41xc")
+
+[node name="Divider4" type="CollisionShape2D" parent="Maze/DividerWalls" unique_id=1237913704]
+position = Vector2(-3996.7212, 32.786743)
+rotation = 1.5707964
+scale = Vector2(231.14874, 6.8769155)
+shape = SubResource("RectangleShape2D_h41xc")
+
+[node name="Divider5" type="CollisionShape2D" parent="Maze/DividerWalls" unique_id=1518523398]
+position = Vector2(-154.09814, 32.786743)
+rotation = 1.5707964
+scale = Vector2(231.14874, 6.8769155)
+shape = SubResource("RectangleShape2D_h41xc")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Maze/DividerWalls" unique_id=141983642]
 position = Vector2(-3502.418, -291.0246)
 shape = SubResource("RectangleShape2D_glv4d")
