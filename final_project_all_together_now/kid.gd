@@ -2,7 +2,7 @@ extends CharacterBody2D
 @export var player_id: String = "p2"
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 
 func _physics_process(delta: float) -> void:
