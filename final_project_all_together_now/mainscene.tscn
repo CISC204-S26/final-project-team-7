@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="1_wtdyi"]
 [ext_resource type="Script" uid="uid://b78xov0adurei" path="res://dracbody.gd" id="2_5lfti"]
 [ext_resource type="Texture2D" uid="uid://bk83eki4f6t8n" path="res://mcgrass.webp" id="4_5lfti"]
+[ext_resource type="Texture2D" uid="uid://drf3hupacfbww" path="res://RedPlaceholder.png" id="5_8bn17"]
 [ext_resource type="Script" uid="uid://1m5ep6oeinn3" path="res://enemy.gd" id="6_76yo1"]
 [ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="7_8bn17"]
 
@@ -15,7 +16,7 @@ size = Vector2(116, 115)
 size = Vector2(97.18895, 96.84213)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76yo1"]
-size = Vector2(1218, 71)
+size = Vector2(1218, 71.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ftms"]
 size = Vector2(114, 606)
@@ -61,12 +62,12 @@ shape = SubResource("RectangleShape2D_fl65m")
 [node name="barriers" type="StaticBody2D" parent="." unique_id=1971953363]
 
 [node name="Mcgrass" type="Sprite2D" parent="barriers" unique_id=631184355]
-position = Vector2(587, 637)
-scale = Vector2(1, 0.1475)
-texture = ExtResource("4_5lfti")
+position = Vector2(585.00006, 591)
+scale = Vector2(6.3821983, 2.181857)
+texture = ExtResource("5_8bn17")
 
 [node name="groundcoll" type="CollisionShape2D" parent="barriers" unique_id=432062216]
-position = Vector2(579, 589)
+position = Vector2(579, 588.75)
 shape = SubResource("RectangleShape2D_76yo1")
 
 [node name="leftcoll" type="CollisionShape2D" parent="barriers" unique_id=1497030487]
