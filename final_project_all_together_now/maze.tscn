@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://pc053cohwf8o" path="res://bouncing_npc.gd" id="4_mjrf4"]
 [ext_resource type="Script" uid="uid://bo7g2c78udkdw" path="res://player_top.gd" id="4_nw8dj"]
 [ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="4_pgab2"]
-[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="5_glv4d"]
+[ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="5_glv4d"]
 [ext_resource type="Script" uid="uid://c7olibhwivsyh" path="res://player_bottom.gd" id="5_xhimc"]
-[ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="7_dnyu5"]
+[ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="7_dnyu5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dj01w"]
 
@@ -24,11 +24,13 @@ size = Vector2(91, 340)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u11kd"]
 size = Vector2(189, 291)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifb1s"]
-size = Vector2(77, 76)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifb1s"]
+radius = 15.0
+height = 68.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwyby"]
-size = Vector2(74, 76)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cwyby"]
+radius = 23.0
+height = 96.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjrf4"]
 radius = 41.04875
@@ -212,31 +214,33 @@ position = Vector2(-30, 49)
 scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("2_h41xc")
 
-[node name="Players UNFINISHED" type="Node2D" parent="." unique_id=1027814653]
+[node name="Players" type="Node2D" parent="." unique_id=1027814653]
 
-[node name="PlayerTop" type="CharacterBody2D" parent="Players UNFINISHED" unique_id=1664277105]
+[node name="PlayerTop" type="CharacterBody2D" parent="Players" unique_id=1664277105]
 position = Vector2(54, 147)
 script = ExtResource("4_nw8dj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Players UNFINISHED/PlayerTop" unique_id=1552129859]
-position = Vector2(1, 0)
-scale = Vector2(0.64, 0.64)
+[node name="Sprite2D" type="Sprite2D" parent="Players/PlayerTop" unique_id=1552129859]
+position = Vector2(0, 1)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_glv4d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players UNFINISHED/PlayerTop" unique_id=1310011971]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_ifb1s")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/PlayerTop" unique_id=1310011971]
+position = Vector2(-2, 3)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_ifb1s")
 
-[node name="PlayerBottom" type="CharacterBody2D" parent="Players UNFINISHED" unique_id=1599530163]
+[node name="PlayerBottom" type="CharacterBody2D" parent="Players" unique_id=1599530163]
 position = Vector2(60, 502)
 script = ExtResource("5_xhimc")
 
-[node name="Sprite2D" type="Sprite2D" parent="Players UNFINISHED/PlayerBottom" unique_id=1569148277]
-scale = Vector2(0.8, 0.8)
+[node name="Sprite2D" type="Sprite2D" parent="Players/PlayerBottom" unique_id=1569148277]
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("7_dnyu5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players UNFINISHED/PlayerBottom" unique_id=881548190]
-shape = SubResource("RectangleShape2D_cwyby")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/PlayerBottom" unique_id=881548190]
+position = Vector2(-3, 3)
+shape = SubResource("CapsuleShape2D_cwyby")
 
 [node name="NPC ADD SPRITE" type="Node2D" parent="." unique_id=1801556219]
 position = Vector2(778, 524)
@@ -255,6 +259,8 @@ position = Vector2(-6, 0)
 shape = SubResource("CircleShape2D_mjrf4")
 
 [node name="SwitchArea" type="Area2D" parent="." unique_id=175001773]
+light_mask = 0
+visibility_layer = 4
 position = Vector2(593, 497)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchArea" unique_id=281083500]
