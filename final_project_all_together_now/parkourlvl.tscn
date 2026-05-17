@@ -2,13 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="1_1nr0x"]
 [ext_resource type="Script" uid="uid://df0c6tevbnkk6" path="res://oldman.gd" id="1_2y8fq"]
+[ext_resource type="Texture2D" uid="uid://clcb6f0kjjnvx" path="res://Art/Parkour Art/PBackground.png" id="1_edrtp"]
 [ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="2_fdli5"]
+[ext_resource type="Texture2D" uid="uid://rnj05bpy60ys" path="res://Art/Parkour Art/PFloor.png" id="3_nd7xp"]
 [ext_resource type="Script" uid="uid://rn5y8s1ojmfu" path="res://kid.gd" id="3_osusr"]
-[ext_resource type="Texture2D" uid="uid://drf3hupacfbww" path="res://RedPlaceholder.png" id="5_osusr"]
-[ext_resource type="Texture2D" uid="uid://i6gkg0vr7qma" path="res://portalplacehodlre.png" id="6_12v2d"]
-[ext_resource type="Texture2D" uid="uid://bmicujn74ildn" path="res://buttonplaceholder.webp" id="7_i8pi6"]
+[ext_resource type="Texture2D" uid="uid://nhubx0r7ddin" path="res://Art/Parkour Art/PLanding1.png" id="4_ru6l1"]
+[ext_resource type="Texture2D" uid="uid://p8r27tgych4l" path="res://Art/Parkour Art/PLanding2.png" id="5_jchmm"]
+[ext_resource type="Script" uid="uid://dhy21scfb5ity" path="res://paper.gd" id="6_3o0tb"]
+[ext_resource type="Texture2D" uid="uid://c4xfxm2qjpbbu" path="res://Art/Parkour Art/PSquare.png" id="6_l27qf"]
+[ext_resource type="Texture2D" uid="uid://b4tuj5oa0aa0x" path="res://Art/Parkour Art/PLanding3.png" id="7_3o0tb"]
+[ext_resource type="Texture2D" uid="uid://i6g6u2kbpwlo" path="res://Art/Parkour Art/Portal.png" id="8_mxm7m"]
 [ext_resource type="Texture2D" uid="uid://cj8e8mdk7fhvq" path="res://emre.webp" id="8_t84jd"]
+[ext_resource type="Texture2D" uid="uid://btrdnhdfete1u" path="res://Art/Parkour Art/Button.png" id="9_es6pe"]
 [ext_resource type="Texture2D" uid="uid://fduf845jkj16" path="res://triangleph.png" id="9_i8pi6"]
+[ext_resource type="Script" uid="uid://d2utxow46ya0n" path="res://portalenter.gd" id="14_mxm7m"]
+[ext_resource type="Texture2D" uid="uid://dhfoyailivgg7" path="res://exitsign.webp" id="15_nd7xp"]
+[ext_resource type="Texture2D" uid="uid://datwhjlbbejhq" path="res://door open.png" id="16_jchmm"]
+[ext_resource type="Texture2D" uid="uid://bhthxp77einik" path="res://door.png" id="17_l27qf"]
+[ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="18_l27qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxm7m"]
+size = Vector2(57.5, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru6l1"]
 size = Vector2(78, 116)
@@ -17,10 +31,10 @@ size = Vector2(78, 116)
 size = Vector2(190, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r568j"]
-size = Vector2(192.42894, 36.999992)
+size = Vector2(160.35745, 36.999992)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbx1k"]
-size = Vector2(13.263535, 86.14343)
+size = Vector2(13.263535, 65.69211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edrtp"]
 size = Vector2(16.133015, 23.550009)
@@ -48,11 +62,11 @@ radius = 32.0
 height = 92.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fbx1k"]
-radius = 32.0
-height = 92.0
+radius = 42.0
+height = 116.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r568j"]
-radius = 31.575306
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bydsq"]
+size = Vector2(77, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y8fq"]
 size = Vector2(47.75, 60.5)
@@ -60,9 +74,65 @@ size = Vector2(47.75, 60.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8fno"]
 size = Vector2(44.5, 64)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jchmm"]
+friction = 1.5
+rough = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3o0tb"]
+rough = true
+absorbent = true
+
 [node name="Node2D" type="Node2D" unique_id=1659527507]
 
+[node name="PBackground" type="Sprite2D" parent="." unique_id=904906985]
+position = Vector2(569, 317)
+texture = ExtResource("1_edrtp")
+
+[node name="Exitsign" type="Sprite2D" parent="." unique_id=1209816935]
+position = Vector2(864, 16)
+scale = Vector2(0.15731059, 0.16285715)
+texture = ExtResource("15_nd7xp")
+
+[node name="DoorClose" type="Sprite2D" parent="." unique_id=113831431]
+position = Vector2(870, 112)
+scale = Vector2(0.22849996, 0.2035)
+texture = ExtResource("16_jchmm")
+
+[node name="DoorOpen" type="Sprite2D" parent="." unique_id=1641389879]
+position = Vector2(870, 112)
+scale = Vector2(0.22849996, 0.2035)
+texture = ExtResource("17_l27qf")
+
+[node name="paper" type="Area2D" parent="." unique_id=469217953]
+position = Vector2(1481, 273)
+script = ExtResource("6_3o0tb")
+
+[node name="Paper1" type="Sprite2D" parent="paper" unique_id=1516484467]
+position = Vector2(26.999947, 62.999996)
+scale = Vector2(0.5743634, 0.62060183)
+texture = ExtResource("18_l27qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paper" unique_id=1092843367]
+position = Vector2(-363.75, 267.5)
+shape = SubResource("RectangleShape2D_mxm7m")
+
+[node name="Label" type="Label" parent="paper" unique_id=1695777090]
+visible = false
+offset_left = -712.0
+offset_top = 51.0
+offset_right = -335.0
+offset_bottom = 204.0
+text = "No old man should be doing parkour, 
+maybe a ramp would help... 
+No kid should be using portals (at least, not yet), 
+maybe an old man would help... 
+
+Stuck? Use R to reset the level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="helper" type="Area2D" parent="." unique_id=1830284271]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="helper" unique_id=87207947]
 position = Vector2(883, 99.125)
@@ -74,39 +144,42 @@ position = Vector2(881, 97)
 shape = SubResource("RectangleShape2D_ru6l1")
 
 [node name="barriers" type="StaticBody2D" parent="." unique_id=357506400]
+collision_layer = 15
+collision_mask = 15
 
 [node name="floor" type="Sprite2D" parent="barriers" unique_id=1303569824]
-position = Vector2(558.75, 677.5)
-scale = Vector2(6.8507853, 4.621622)
-texture = ExtResource("5_osusr")
+position = Vector2(563, 247)
+scale = Vector2(0.7140625, 0.76729244)
+texture = ExtResource("3_nd7xp")
 
 [node name="platformcoll1" type="CollisionShape2D" parent="barriers" unique_id=533270472]
-position = Vector2(748, 493)
+position = Vector2(574, 473)
 shape = SubResource("RectangleShape2D_t84jd")
 
 [node name="platform1" type="Sprite2D" parent="barriers" unique_id=2056465193]
-position = Vector2(745, 492)
-texture = ExtResource("5_osusr")
+position = Vector2(436, 253)
+scale = Vector2(0.78281254, 0.73240745)
+texture = ExtResource("4_ru6l1")
 
 [node name="platformcoll2" type="CollisionShape2D" parent="barriers" unique_id=2128084110]
-position = Vector2(238.99998, 431.5)
+position = Vector2(188.5, 431.5)
 scale = Vector2(3.1492145, 1.2702708)
 shape = SubResource("RectangleShape2D_r568j")
 
 [node name="platform2" type="Sprite2D" parent="barriers" unique_id=1594961454]
-position = Vector2(249, 431.00003)
-scale = Vector2(3.1492145, 1.2702708)
-texture = ExtResource("5_osusr")
+position = Vector2(-1780.8824, 159)
+scale = Vector2(3.9811277, 0.9221724)
+texture = ExtResource("5_jchmm")
 
 [node name="platformcoll3" type="CollisionShape2D" parent="barriers" unique_id=108817171]
-position = Vector2(12.229004, 342.5)
+position = Vector2(12.229004, 359)
 scale = Vector2(9.917552, 1.613588)
 shape = SubResource("RectangleShape2D_fbx1k")
 
 [node name="platform3" type="Sprite2D" parent="barriers" unique_id=211728984]
-position = Vector2(30.390766, 340.00003)
-scale = Vector2(0.49623835, 3.6756759)
-texture = ExtResource("5_osusr")
+position = Vector2(-25.499737, 334.73303)
+scale = Vector2(0.98281235, 0.7809871)
+texture = ExtResource("6_l27qf")
 
 [node name="platformcoll4" type="CollisionShape2D" parent="barriers" unique_id=669744455]
 position = Vector2(218, 244)
@@ -114,9 +187,9 @@ scale = Vector2(9.917552, 1.613588)
 shape = SubResource("RectangleShape2D_edrtp")
 
 [node name="platform4" type="Sprite2D" parent="barriers" unique_id=359137116]
-position = Vector2(212.99998, 242)
-scale = Vector2(0.83540887, 1.1040894)
-texture = ExtResource("5_osusr")
+position = Vector2(79, 423.99994)
+scale = Vector2(0.29746044, 0.65051115)
+texture = ExtResource("7_3o0tb")
 
 [node name="platformcoll5" type="CollisionShape2D" parent="barriers" unique_id=1335611266]
 position = Vector2(447, 203)
@@ -124,9 +197,9 @@ scale = Vector2(8.285212, 1.7815455)
 shape = SubResource("RectangleShape2D_nd7xp")
 
 [node name="platform5" type="Sprite2D" parent="barriers" unique_id=1271955614]
-position = Vector2(452, 201.99998)
-scale = Vector2(0.69790804, 1.2190133)
-texture = ExtResource("5_osusr")
+position = Vector2(341.5, 370)
+scale = Vector2(0.23697919, 0.60955256)
+texture = ExtResource("7_3o0tb")
 
 [node name="platformcoll6" type="CollisionShape2D" parent="barriers" unique_id=1869960525]
 position = Vector2(1187, 177)
@@ -134,9 +207,9 @@ scale = Vector2(68.64473, 3.1739044)
 shape = SubResource("RectangleShape2D_k0grp")
 
 [node name="platform6" type="Sprite2D" parent="barriers" unique_id=855339926]
-position = Vector2(1183, 179)
-scale = Vector2(5.7916813, 1.139918)
-texture = ExtResource("5_osusr")
+position = Vector2(243.99998, 395)
+scale = Vector2(2.4408891, 0.79218113)
+texture = ExtResource("7_3o0tb")
 
 [node name="left" type="CollisionShape2D" parent="barriers" unique_id=1961944794]
 position = Vector2(-66, 325)
@@ -155,39 +228,48 @@ position = Vector2(1193, 314)
 shape = SubResource("RectangleShape2D_i8pi6")
 
 [node name="portalexit" type="Area2D" parent="." unique_id=2076055363]
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalexit" unique_id=2009146936]
-position = Vector2(1091, 99)
+position = Vector2(1096, 106)
 shape = SubResource("CapsuleShape2D_k0grp")
 
 [node name="Sprite2D" type="Sprite2D" parent="portalexit" unique_id=1803221125]
-position = Vector2(1093, 99.00001)
-scale = Vector2(0.2125, 0.178)
-texture = ExtResource("6_12v2d")
+position = Vector2(777, 318)
+scale = Vector2(0.46497396, 0.5384537)
+texture = ExtResource("8_mxm7m")
 
-[node name="portalenter" type="Area2D" parent="." unique_id=1266101424]
+[node name="portalenter" type="Area2D" parent="." unique_id=1266101424 node_paths=PackedStringArray("spawn_point")]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("14_mxm7m")
+spawn_point = NodePath("../Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalenter" unique_id=1185788425]
-position = Vector2(132, 360)
+position = Vector2(217, 362)
 shape = SubResource("CapsuleShape2D_fbx1k")
 
 [node name="Sprite2D" type="Sprite2D" parent="portalenter" unique_id=1048724856]
-position = Vector2(133.00002, 358.00003)
-scale = Vector2(0.2125, 0.178)
-texture = ExtResource("6_12v2d")
+position = Vector2(-88.00001, 574.00006)
+scale = Vector2(0.4472656, 0.52456486)
+texture = ExtResource("8_mxm7m")
 
 [node name="button" type="Area2D" parent="." unique_id=2016359189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=803619227]
-position = Vector2(716, 161)
-shape = SubResource("CircleShape2D_r568j")
+position = Vector2(717.5, 150.5)
+shape = SubResource("RectangleShape2D_bydsq")
 
 [node name="Sprite2D" type="Sprite2D" parent="button" unique_id=1290268860]
-position = Vector2(714.75, 145.25)
-scale = Vector2(0.10963104, 0.11)
-texture = ExtResource("7_i8pi6")
+position = Vector2(183.00003, -362)
+scale = Vector2(1.0507813, 1.9532405)
+texture = ExtResource("9_es6pe")
 
-[node name="oldman" type="CharacterBody2D" parent="." unique_id=1810932352]
+[node name="oldman" type="CharacterBody2D" parent="." unique_id=1810932352 groups=["oldman"]]
+z_index = 2
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_2y8fq")
 
 [node name="Sprite2D" type="Sprite2D" parent="oldman" unique_id=979631136]
@@ -200,6 +282,8 @@ position = Vector2(936.125, 548.25)
 shape = SubResource("RectangleShape2D_2y8fq")
 
 [node name="kid" type="CharacterBody2D" parent="." unique_id=405516588]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("3_osusr")
 
 [node name="Sprite2D" type="Sprite2D" parent="kid" unique_id=1178227560]
@@ -211,14 +295,40 @@ texture = ExtResource("2_fdli5")
 position = Vector2(1041.75, 547)
 shape = SubResource("RectangleShape2D_p8fno")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1420614903]
+[node name="littletriangle" type="RigidBody2D" parent="." unique_id=1420614903]
+collision_layer = 15
+collision_mask = 15
+physics_material_override = SubResource("PhysicsMaterial_jchmm")
+gravity_scale = 3.269
+lock_rotation = true
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=888308643]
-position = Vector2(439.99988, 340)
-scale = Vector2(0.14400004, 0.12349998)
+[node name="Sprite2D" type="Sprite2D" parent="littletriangle" unique_id=888308643]
+position = Vector2(346.00006, 379.00003)
+scale = Vector2(0.19588219, 0.04750002)
 texture = ExtResource("9_i8pi6")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=261227112]
-position = Vector2(439.99988, 340)
-scale = Vector2(0.14400004, 0.12349998)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="littletriangle" unique_id=1813551331]
+position = Vector2(346.00006, 379.00003)
+scale = Vector2(0.19588219, 0.04750002)
 polygon = PackedVector2Array(500, 500, 500, 494.2, -495, -499.9, -500, -500, -500, 500)
+
+[node name="bigtriangle" type="StaticBody2D" parent="." unique_id=714437562]
+physics_material_override = SubResource("PhysicsMaterial_3o0tb")
+
+[node name="Sprite2D" type="Sprite2D" parent="bigtriangle" unique_id=847429520]
+position = Vector2(781.4375, 503.00003)
+scale = Vector2(0.23512502, 0.18499999)
+texture = ExtResource("9_i8pi6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bigtriangle" unique_id=1663400937]
+position = Vector2(781.4375, 503.00003)
+scale = Vector2(0.23512502, 0.18499999)
+polygon = PackedVector2Array(500, 500, 500, 494.2, -495, -499.9, -500, -500, -500, 500)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1599607916]
+position = Vector2(977, 100)
+
+[connection signal="body_entered" from="paper" to="paper" method="_on_body_entered"]
+[connection signal="body_exited" from="paper" to="paper" method="_on_body_exited"]
+[connection signal="body_entered" from="portalenter" to="portalenter" method="_on_body_entered"]
+[connection signal="body_exited" from="portalenter" to="portalenter" method="_on_body_exited"]
