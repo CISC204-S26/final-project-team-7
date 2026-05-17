@@ -1,56 +1,151 @@
 [gd_scene format=3 uid="uid://ccgyk3mqu8edl"]
 
-[ext_resource type="Script" uid="uid://v87q2nx3xefx" path="res://godotguybody.gd" id="1_itap8"]
-[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="2_3st5j"]
-[ext_resource type="Script" uid="uid://b78xov0adurei" path="res://dracbody.gd" id="3_wsudi"]
-[ext_resource type="Texture2D" uid="uid://cuild2m2nglqd" path="res://Screenshot 2026-02-02 143632.png" id="4_p8y5c"]
-[ext_resource type="Script" uid="uid://1m5ep6oeinn3" path="res://enemy.gd" id="5_r6gcm"]
-[ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="6_jkq5m"]
+[ext_resource type="Texture2D" uid="uid://j4epwyvhegav" path="res://Art/Escape Art/EBackground.png" id="1_t3dgf"]
+[ext_resource type="Texture2D" uid="uid://b6ei6fii4cmcu" path="res://Art/Escape Art/EFloor.png" id="2_rokn1"]
+[ext_resource type="Texture2D" uid="uid://vxqqxtflwnbd" path="res://Art/Escape Art/E1.png" id="3_q7i3k"]
+[ext_resource type="Texture2D" uid="uid://visbpd7ioeh2" path="res://Art/Escape Art/E2.png" id="4_uj47j"]
+[ext_resource type="Texture2D" uid="uid://cvjhy0ce3fphc" path="res://Art/Escape Art/E3.png" id="5_kamyq"]
+[ext_resource type="Texture2D" uid="uid://bshht48yjuqv3" path="res://Art/Escape Art/E4.png" id="6_rllcg"]
+[ext_resource type="Texture2D" uid="uid://ok1hdt0n420r" path="res://Art/Escape Art/E5.png" id="7_gw4vb"]
+[ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="8_jebls"]
+[ext_resource type="Texture2D" uid="uid://bcvke4caeqnpx" path="res://Art/Escape Art/Skele1.png" id="9_iw7dd"]
+[ext_resource type="Texture2D" uid="uid://bhle646o6uqry" path="res://Art/Escape Art/Skele2.png" id="10_vr0pn"]
+[ext_resource type="Texture2D" uid="uid://cwjkgsm18cfr" path="res://Art/Escape Art/Skele3.png" id="11_pb0ys"]
+[ext_resource type="Script" uid="uid://df0c6tevbnkk6" path="res://oldman.gd" id="12_kamyq"]
+[ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="13_rllcg"]
+[ext_resource type="Script" uid="uid://rn5y8s1ojmfu" path="res://kid.gd" id="14_gw4vb"]
+[ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="15_jebls"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dxa5"]
-size = Vector2(116, 115)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw7dd"]
+size = Vector2(47.75, 60.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ep5y"]
-size = Vector2(97.18895, 96.84213)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr0pn"]
+size = Vector2(44.5, 64)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t3dgf"]
-radius = 30.463093
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kamyq"]
+size = Vector2(1156.75, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rllcg"]
+size = Vector2(32, 646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw4vb"]
+size = Vector2(30, 657)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jebls"]
+size = Vector2(1217, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb0ys"]
+size = Vector2(56, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke36w"]
+size = Vector2(613, 57.5)
 
 [node name="Escaperoom" type="Node2D" unique_id=984202914]
 
-[node name="p1" type="CharacterBody2D" parent="." unique_id=350430887 groups=["player"]]
-script = ExtResource("1_itap8")
+[node name="EBackground" type="Sprite2D" parent="." unique_id=1203668020]
+position = Vector2(576.8889, 324.5)
+scale = Vector2(0.6009259, 0.6009259)
+texture = ExtResource("1_t3dgf")
 
-[node name="p1sprite" type="Sprite2D" parent="p1" unique_id=225060837]
-position = Vector2(234, 540)
-texture = ExtResource("2_3st5j")
+[node name="EFloor" type="Sprite2D" parent="." unique_id=2118522503]
+position = Vector2(577.00006, 324)
+scale = Vector2(0.6027778, 0.6027778)
+texture = ExtResource("2_rokn1")
 
-[node name="p1coll" type="CollisionShape2D" parent="p1" unique_id=2095882663]
-position = Vector2(235, 538.5)
-shape = SubResource("RectangleShape2D_1dxa5")
+[node name="E1" type="Sprite2D" parent="." unique_id=1680317183]
+position = Vector2(581.2222, 324)
+scale = Vector2(0.59814817, 0.59814817)
+texture = ExtResource("3_q7i3k")
 
-[node name="p2" type="CharacterBody2D" parent="." unique_id=1833272870 groups=["player"]]
-script = ExtResource("3_wsudi")
+[node name="E2" type="Sprite2D" parent="." unique_id=1299700834]
+visible = false
+position = Vector2(577.6667, 322)
+scale = Vector2(0.59444445, 0.59444445)
+texture = ExtResource("4_uj47j")
 
-[node name="p2sprite" type="Sprite2D" parent="p2" unique_id=1576277859]
-position = Vector2(100.75001, 168)
-scale = Vector2(1.1421052, 1.1875)
-texture = ExtResource("4_p8y5c")
+[node name="E3" type="Sprite2D" parent="." unique_id=1342924037]
+position = Vector2(578.00006, 330.00003)
+scale = Vector2(0.5962963, 0.5962963)
+texture = ExtResource("5_kamyq")
 
-[node name="p2coll" type="CollisionShape2D" parent="p2" unique_id=531317847]
-position = Vector2(100.50001, 167.5)
-scale = Vector2(1.1421052, 1.1875)
-shape = SubResource("RectangleShape2D_4ep5y")
+[node name="E4" type="Sprite2D" parent="." unique_id=1646349442]
+position = Vector2(578, 330.00003)
+scale = Vector2(0.5962963, 0.5962963)
+texture = ExtResource("6_rllcg")
 
-[node name="enemy" type="CharacterBody2D" parent="." unique_id=1454451510]
-motion_mode = 1
-script = ExtResource("5_r6gcm")
+[node name="E5" type="Sprite2D" parent="." unique_id=1961499212]
+position = Vector2(579.44446, 323)
+scale = Vector2(0.5962963, 0.5962963)
+texture = ExtResource("7_gw4vb")
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy" unique_id=759421591]
-position = Vector2(845, 355)
-scale = Vector2(0.09537032, 0.08796296)
-texture = ExtResource("6_jkq5m")
+[node name="Paper" type="Sprite2D" parent="." unique_id=974100368]
+position = Vector2(526, 288)
+scale = Vector2(0.65408695, 0.6587963)
+texture = ExtResource("8_jebls")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=1949702245]
-position = Vector2(841, 357)
-shape = SubResource("CircleShape2D_t3dgf")
+[node name="Skele1" type="Sprite2D" parent="." unique_id=660346614]
+position = Vector2(566, 249)
+scale = Vector2(0.77592593, 0.77592593)
+texture = ExtResource("9_iw7dd")
+
+[node name="Skele2" type="Sprite2D" parent="." unique_id=626337627]
+position = Vector2(526, 248.99998)
+scale = Vector2(0.7814815, 0.7814815)
+texture = ExtResource("10_vr0pn")
+
+[node name="Skele3" type="Sprite2D" parent="." unique_id=1459163531]
+position = Vector2(490.00003, 256)
+scale = Vector2(0.7583333, 0.7583333)
+texture = ExtResource("11_pb0ys")
+
+[node name="oldman" type="CharacterBody2D" parent="." unique_id=260916356]
+position = Vector2(-93, 15)
+script = ExtResource("12_kamyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="oldman" unique_id=1652016855]
+position = Vector2(936.5, 548.5)
+scale = Vector2(0.13276836, 0.08428577)
+texture = ExtResource("13_rllcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oldman" unique_id=323500372]
+position = Vector2(936.125, 548.25)
+shape = SubResource("RectangleShape2D_iw7dd")
+
+[node name="kid" type="CharacterBody2D" parent="." unique_id=793943473]
+position = Vector2(-919, 13)
+script = ExtResource("14_gw4vb")
+
+[node name="Sprite2D" type="Sprite2D" parent="kid" unique_id=2014371253]
+position = Vector2(1042.5, 547.5)
+scale = Vector2(0.045918386, 0.066326536)
+texture = ExtResource("15_jebls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kid" unique_id=1236463704]
+position = Vector2(1041.75, 547)
+shape = SubResource("RectangleShape2D_vr0pn")
+
+[node name="Limits" type="StaticBody2D" parent="." unique_id=19640171]
+
+[node name="Floor" type="CollisionShape2D" parent="Limits" unique_id=1538539505]
+position = Vector2(578.75, 623)
+shape = SubResource("RectangleShape2D_kamyq")
+
+[node name="Side1" type="CollisionShape2D" parent="Limits" unique_id=1874209717]
+position = Vector2(-15, 322)
+shape = SubResource("RectangleShape2D_rllcg")
+
+[node name="Side2" type="CollisionShape2D" parent="Limits" unique_id=1640362106]
+position = Vector2(1169, 324.5)
+shape = SubResource("RectangleShape2D_gw4vb")
+
+[node name="Roof" type="CollisionShape2D" parent="Limits" unique_id=666710344]
+position = Vector2(576.5, -9.5)
+shape = SubResource("RectangleShape2D_jebls")
+
+[node name="MidWall" type="CollisionShape2D" parent="Limits" unique_id=726181958]
+position = Vector2(569, 426.5)
+shape = SubResource("RectangleShape2D_pb0ys")
+
+[node name="Floor2" type="CollisionShape2D" parent="Limits" unique_id=2002043340]
+position = Vector2(847.5, 232.25)
+shape = SubResource("RectangleShape2D_ke36w")
