@@ -2,14 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://drieqivwfax3k" path="res://hedge.png" id="1_dj01w"]
 [ext_resource type="Script" uid="uid://dlhtq1avvyrtk" path="res://maze.gd" id="1_ugm30"]
+[ext_resource type="Texture2D" uid="uid://j4epwyvhegav" path="res://Art/Escape Art/EBackground.png" id="2_dnyu5"]
 [ext_resource type="Texture2D" uid="uid://bhthxp77einik" path="res://door.png" id="2_h41xc"]
 [ext_resource type="Texture2D" uid="uid://bn0ji5rkakjdi" path="res://lever.png" id="3_u11kd"]
 [ext_resource type="Script" uid="uid://pc053cohwf8o" path="res://bouncing_npc.gd" id="4_mjrf4"]
 [ext_resource type="Script" uid="uid://bo7g2c78udkdw" path="res://player_top.gd" id="4_nw8dj"]
-[ext_resource type="Texture2D" uid="uid://bi5c1c8iaptdb" path="res://Alien.png" id="4_pgab2"]
 [ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="5_glv4d"]
 [ext_resource type="Script" uid="uid://c7olibhwivsyh" path="res://player_bottom.gd" id="5_xhimc"]
 [ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="7_dnyu5"]
+[ext_resource type="Texture2D" uid="uid://dcq5x6jy5wfnt" path="res://Art/Escape Art/ghost.png" id="9_glv4d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dj01w"]
 
@@ -40,6 +41,11 @@ size = Vector2(72, 74)
 
 [node name="LevelMaze" type="Node2D" unique_id=491989541]
 script = ExtResource("1_ugm30")
+
+[node name="EBackground" type="Sprite2D" parent="." unique_id=555360547]
+position = Vector2(586.2222, 334)
+scale = Vector2(0.6148148, 0.6148148)
+texture = ExtResource("2_dnyu5")
 
 [node name="Maze" type="Node2D" parent="." unique_id=2103415909]
 
@@ -250,12 +256,12 @@ position = Vector2(5, 0)
 script = ExtResource("4_mjrf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC ADD SPRITE/BouncingNPC" unique_id=1767266824]
-position = Vector2(-2, 0)
-scale = Vector2(0.12000005, 0.12000005)
-texture = ExtResource("4_pgab2")
+position = Vector2(-22.46997, -24.470001)
+scale = Vector2(0.061982434, 0.061982434)
+texture = ExtResource("9_glv4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC ADD SPRITE/BouncingNPC" unique_id=554145952]
-position = Vector2(-6, 0)
+position = Vector2(-23, -20)
 shape = SubResource("CircleShape2D_mjrf4")
 
 [node name="SwitchArea" type="Area2D" parent="." unique_id=175001773]

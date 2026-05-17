@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ok1hdt0n420r" path="res://Art/Escape Art/E5.png" id="7_gw4vb"]
 [ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="8_jebls"]
 [ext_resource type="Texture2D" uid="uid://bcvke4caeqnpx" path="res://Art/Escape Art/Skele1.png" id="9_iw7dd"]
+[ext_resource type="Script" uid="uid://dtf7f6hb2ftt2" path="res://door_2.gd" id="10_jcvfs"]
 [ext_resource type="Texture2D" uid="uid://bhle646o6uqry" path="res://Art/Escape Art/Skele2.png" id="10_vr0pn"]
 [ext_resource type="Texture2D" uid="uid://pydkho3mh67s" path="res://Art/Escape Art/EPortal.png" id="10_x61ay"]
 [ext_resource type="Texture2D" uid="uid://cwjkgsm18cfr" path="res://Art/Escape Art/Skele3.png" id="11_pb0ys"]
@@ -23,9 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bj38l1sanamlr" path="res://Art/Escape Art/1.png" id="21_x61ay"]
 [ext_resource type="Texture2D" uid="uid://bdbhw8q7l7njt" path="res://Art/Escape Art/3.png" id="22_jcvfs"]
 [ext_resource type="Texture2D" uid="uid://gv2603l1ulm" path="res://Art/Escape Art/2.png" id="23_1lp2a"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_x61ay"]
-radius = 71.34424
+[ext_resource type="Texture2D" uid="uid://brnyj70hxs7rt" path="res://Art/Untitled_Artwork (2).png" id="25_1lp2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lp2a"]
 radius = 82.219215
@@ -55,7 +54,7 @@ size = Vector2(30, 657)
 size = Vector2(1217, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb0ys"]
-size = Vector2(56, 597)
+size = Vector2(56, 374)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x61ay"]
 size = Vector2(76, 91.5)
@@ -64,10 +63,10 @@ size = Vector2(76, 91.5)
 size = Vector2(104, 126.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr0pn"]
-size = Vector2(52, 132)
+size = Vector2(52, 67)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iw7dd"]
-radius = 49.0306
+radius = 64.195015
 
 [node name="Escaperoom" type="Node2D" unique_id=984202914]
 script = ExtResource("1_gw4vb")
@@ -118,20 +117,8 @@ position = Vector2(404, 189)
 scale = Vector2(0.031494133, 0.031494133)
 texture = ExtResource("23_1lp2a")
 
-[node name="Door1" type="Area2D" parent="." unique_id=1566876809]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Door1" unique_id=1947190253]
-position = Vector2(-434, 438.5)
-scale = Vector2(0.725, 0.725)
-texture = ExtResource("10_x61ay")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1" unique_id=92108402]
-position = Vector2(57, 146.50006)
-shape = SubResource("CircleShape2D_x61ay")
-
 [node name="Door2" type="Area2D" parent="." unique_id=948128023]
-visible = false
+script = ExtResource("10_jcvfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door2" unique_id=457337854]
 position = Vector2(521, 854)
@@ -146,12 +133,12 @@ shape = SubResource("CircleShape2D_1lp2a")
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Staircase" unique_id=2119217985]
-position = Vector2(639.9999, 286.99997)
+position = Vector2(646.3333, 250.5)
 scale = Vector2(0.7138889, 0.7138889)
 texture = ExtResource("7_gw4vb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase" unique_id=420503110]
-position = Vector2(305, 528.25)
+position = Vector2(311.33344, 491.75)
 shape = SubResource("RectangleShape2D_ke36w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Staircase" unique_id=1554559209]
@@ -173,13 +160,18 @@ position = Vector2(213.33331, 303.99997)
 shape = SubResource("RectangleShape2D_1lp2a")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Staircase" unique_id=1659047747]
-position = Vector2(392.3333, -15.499985)
+position = Vector2(796.3333, -40.50001)
 scale = Vector2(0.7138889, 0.7138889)
 texture = ExtResource("7_gw4vb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Staircase" unique_id=1581646865]
-position = Vector2(59.333252, 228.25)
+position = Vector2(463.3333, 203.24997)
 shape = SubResource("RectangleShape2D_lm71y")
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=1342924037]
+position = Vector2(578.00006, 330.00003)
+scale = Vector2(0.5962963, 0.5962963)
+texture = ExtResource("5_kamyq")
 
 [node name="Limits" type="StaticBody2D" parent="." unique_id=19640171]
 
@@ -193,11 +185,6 @@ texture = ExtResource("4_uj47j")
 position = Vector2(578, 330.00003)
 scale = Vector2(0.5962963, 0.5962963)
 texture = ExtResource("6_rllcg")
-
-[node name="Wall" type="Sprite2D" parent="Limits" unique_id=1342924037]
-position = Vector2(578.00006, 330.00003)
-scale = Vector2(0.5962963, 0.5962963)
-texture = ExtResource("5_kamyq")
 
 [node name="Floor" type="CollisionShape2D" parent="Limits" unique_id=1538539505]
 position = Vector2(578.75, 623)
@@ -216,7 +203,7 @@ position = Vector2(576.5, -9.5)
 shape = SubResource("RectangleShape2D_jebls")
 
 [node name="MidWall" type="CollisionShape2D" parent="Limits" unique_id=726181958]
-position = Vector2(569, 297.5)
+position = Vector2(569, 409)
 shape = SubResource("RectangleShape2D_pb0ys")
 
 [node name="Paper1" type="Area2D" parent="." unique_id=1609718913]
@@ -242,7 +229,7 @@ text = "One hid behind laughter.
 One hid behind money.
 One hid behind purity.
 But when death came, only one had nothing to hide.
-Put them in order and enter the code above."
+Enter the code below."
 
 [node name="oldman" type="CharacterBody2D" parent="." unique_id=260916356]
 position = Vector2(-93, 15)
@@ -267,7 +254,7 @@ scale = Vector2(0.12142857, 0.14520553)
 texture = ExtResource("15_jebls")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kid" unique_id=1236463704]
-position = Vector2(1015, 528)
+position = Vector2(1015, 560.5)
 shape = SubResource("RectangleShape2D_vr0pn")
 
 [node name="Jumpscare" type="CharacterBody2D" parent="." unique_id=1493140879]
@@ -289,6 +276,21 @@ position = Vector2(336.5, 35.500008)
 scale = Vector2(9.1484375, 4.8359375)
 texture = ExtResource("16_rllcg")
 
+[node name="WrongCode" type="Sprite2D" parent="." unique_id=1125709655]
+visible = false
+position = Vector2(596.44446, 319)
+scale = Vector2(0.61296296, 0.61296296)
+texture = ExtResource("25_1lp2a")
+
+[node name="Label" type="Label" parent="." unique_id=1640416952]
+offset_left = 631.0
+offset_top = 511.0
+offset_right = 754.0
+offset_bottom = 534.0
+text = "Press 'E' to read"
+
 [connection signal="text_submitted" from="CodeInput" to="." method="_on_line_edit_text_submitted"]
+[connection signal="body_entered" from="Door2" to="Door2" method="_on_body_entered"]
+[connection signal="body_exited" from="Door2" to="Door2" method="_on_body_exited"]
 [connection signal="body_entered" from="Paper1" to="Paper1" method="_on_body_entered"]
 [connection signal="body_exited" from="Paper1" to="Paper1" method="_on_body_exited"]

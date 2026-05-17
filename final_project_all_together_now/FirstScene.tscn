@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ddog40mtf6a53"]
+
+[ext_resource type="Texture2D" uid="uid://cc1rklk6uxlrb" path="res://Art/FirstScene.png" id="1_0w2fn"]
+[ext_resource type="Script" uid="uid://b0hhbe7p8foya" path="res://play_button.gd" id="2_es5q2"]
+[ext_resource type="Texture2D" uid="uid://dn7c5fd1v6x0c" path="res://Art/PLAY.png" id="3_tr3l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3jwm"]
+size = Vector2(245.5, 116)
+
+[node name="FirstScene" type="Node2D" unique_id=1970397743]
+
+[node name="FirstScene" type="Sprite2D" parent="." unique_id=229623856]
+position = Vector2(578.7778, 324)
+scale = Vector2(0.6018518, 0.6018519)
+texture = ExtResource("1_0w2fn")
+
+[node name="PlayButton" type="Area2D" parent="." unique_id=1347501837]
+script = ExtResource("2_es5q2")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayButton" unique_id=612253880]
+position = Vector2(977.00006, 593)
+scale = Vector2(0.19212966, 0.19212966)
+texture = ExtResource("3_tr3l3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButton" unique_id=1443775323]
+position = Vector2(991.25, 583)
+shape = SubResource("RectangleShape2D_k3jwm")

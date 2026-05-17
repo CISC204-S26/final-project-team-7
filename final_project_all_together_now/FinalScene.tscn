@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cjfe4lya4b6kb"]
 
 [ext_resource type="Texture2D" uid="uid://gcc4ic6bpxgo" path="res://Art/FinalScene (1).png" id="1_hoic1"]
+[ext_resource type="Script" uid="uid://cked3j6050k0o" path="res://exit_button.gd" id="2_sku2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cso2"]
+size = Vector2(315, 144)
 
 [node name="FinalScene" type="Node2D" unique_id=1192508988]
 
@@ -8,3 +12,11 @@
 position = Vector2(579.55554, 322)
 scale = Vector2(0.6037037, 0.6037037)
 texture = ExtResource("1_hoic1")
+
+[node name="ExitButton" type="Area2D" parent="." unique_id=708183709]
+position = Vector2(961, 560)
+script = ExtResource("2_sku2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitButton" unique_id=901458764]
+position = Vector2(13.5, -8)
+shape = SubResource("RectangleShape2D_4cso2")
