@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cjfe4lya4b6kb"]
+
+[ext_resource type="Texture2D" uid="uid://gcc4ic6bpxgo" path="res://Art/FinalScene (1).png" id="1_hoic1"]
+
+[node name="FinalScene" type="Node2D" unique_id=1192508988]
+
+[node name="FinalScene(1)" type="Sprite2D" parent="." unique_id=50585562]
+position = Vector2(579.55554, 322)
+scale = Vector2(0.6037037, 0.6037037)
+texture = ExtResource("1_hoic1")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ccgyk3mqu8edl"]
 
+[ext_resource type="Script" uid="uid://b3txy3ixnvi3r" path="res://escaperoom.gd" id="1_gw4vb"]
 [ext_resource type="Texture2D" uid="uid://j4epwyvhegav" path="res://Art/Escape Art/EBackground.png" id="1_t3dgf"]
 [ext_resource type="Texture2D" uid="uid://b6ei6fii4cmcu" path="res://Art/Escape Art/EFloor.png" id="2_rokn1"]
-[ext_resource type="Texture2D" uid="uid://vxqqxtflwnbd" path="res://Art/Escape Art/E1.png" id="3_q7i3k"]
 [ext_resource type="Texture2D" uid="uid://visbpd7ioeh2" path="res://Art/Escape Art/E2.png" id="4_uj47j"]
 [ext_resource type="Texture2D" uid="uid://cvjhy0ce3fphc" path="res://Art/Escape Art/E3.png" id="5_kamyq"]
 [ext_resource type="Texture2D" uid="uid://bshht48yjuqv3" path="res://Art/Escape Art/E4.png" id="6_rllcg"]
@@ -10,17 +10,37 @@
 [ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="8_jebls"]
 [ext_resource type="Texture2D" uid="uid://bcvke4caeqnpx" path="res://Art/Escape Art/Skele1.png" id="9_iw7dd"]
 [ext_resource type="Texture2D" uid="uid://bhle646o6uqry" path="res://Art/Escape Art/Skele2.png" id="10_vr0pn"]
+[ext_resource type="Texture2D" uid="uid://pydkho3mh67s" path="res://Art/Escape Art/EPortal.png" id="10_x61ay"]
 [ext_resource type="Texture2D" uid="uid://cwjkgsm18cfr" path="res://Art/Escape Art/Skele3.png" id="11_pb0ys"]
 [ext_resource type="Script" uid="uid://df0c6tevbnkk6" path="res://oldman.gd" id="12_kamyq"]
 [ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="13_rllcg"]
 [ext_resource type="Script" uid="uid://rn5y8s1ojmfu" path="res://kid.gd" id="14_gw4vb"]
+[ext_resource type="Script" uid="uid://t7gvbwrydlcw" path="res://Jumpscare.gd" id="14_kamyq"]
 [ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="15_jebls"]
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="16_rllcg"]
+[ext_resource type="Script" uid="uid://q16iv4qnd842" path="res://paper_1.gd" id="17_iw7dd"]
+[ext_resource type="Texture2D" uid="uid://dcq5x6jy5wfnt" path="res://Art/Escape Art/ghost.png" id="21_ke36w"]
+[ext_resource type="Texture2D" uid="uid://bj38l1sanamlr" path="res://Art/Escape Art/1.png" id="21_x61ay"]
+[ext_resource type="Texture2D" uid="uid://bdbhw8q7l7njt" path="res://Art/Escape Art/3.png" id="22_jcvfs"]
+[ext_resource type="Texture2D" uid="uid://gv2603l1ulm" path="res://Art/Escape Art/2.png" id="23_1lp2a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw7dd"]
-size = Vector2(47.75, 60.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_x61ay"]
+radius = 71.34424
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr0pn"]
-size = Vector2(44.5, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lp2a"]
+radius = 82.219215
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke36w"]
+size = Vector2(124, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcvfs"]
+size = Vector2(127, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lp2a"]
+size = Vector2(126, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm71y"]
+size = Vector2(125, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kamyq"]
 size = Vector2(1156.75, 58)
@@ -35,12 +55,22 @@ size = Vector2(30, 657)
 size = Vector2(1217, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb0ys"]
-size = Vector2(56, 339)
+size = Vector2(56, 597)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke36w"]
-size = Vector2(613, 57.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x61ay"]
+size = Vector2(76, 91.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw7dd"]
+size = Vector2(104, 126.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr0pn"]
+size = Vector2(52, 132)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iw7dd"]
+radius = 49.0306
 
 [node name="Escaperoom" type="Node2D" unique_id=984202914]
+script = ExtResource("1_gw4vb")
 
 [node name="EBackground" type="Sprite2D" parent="." unique_id=1203668020]
 position = Vector2(576.8889, 324.5)
@@ -52,79 +82,122 @@ position = Vector2(577.00006, 324)
 scale = Vector2(0.6027778, 0.6027778)
 texture = ExtResource("2_rokn1")
 
-[node name="E1" type="Sprite2D" parent="." unique_id=1680317183]
-position = Vector2(581.2222, 324)
-scale = Vector2(0.59814817, 0.59814817)
-texture = ExtResource("3_q7i3k")
+[node name="CodeInput" type="LineEdit" parent="." unique_id=1526646054]
+offset_left = 652.0
+offset_top = 380.0
+offset_right = 721.0
+offset_bottom = 411.0
 
-[node name="E2" type="Sprite2D" parent="." unique_id=1299700834]
+[node name="Clown" type="Sprite2D" parent="." unique_id=89819482]
+position = Vector2(336.99994, 290.99997)
+scale = Vector2(0.67592597, 0.6759259)
+texture = ExtResource("9_iw7dd")
+
+[node name="Angel" type="Sprite2D" parent="." unique_id=2071281249]
+position = Vector2(-125, 78)
+scale = Vector2(0.6712963, 0.6712963)
+texture = ExtResource("11_pb0ys")
+
+[node name="Man" type="Sprite2D" parent="." unique_id=2134416826]
+position = Vector2(-218.99998, -65.99999)
+scale = Vector2(0.7537037, 0.7537037)
+texture = ExtResource("10_vr0pn")
+
+[node name="one" type="Sprite2D" parent="." unique_id=1676560892]
+position = Vector2(193, 67)
+scale = Vector2(0.032714855, 0.032714855)
+texture = ExtResource("21_x61ay")
+
+[node name="three" type="Sprite2D" parent="." unique_id=1255764252]
+position = Vector2(472, 402.00003)
+scale = Vector2(0.030517597, 0.030517597)
+texture = ExtResource("22_jcvfs")
+
+[node name="two" type="Sprite2D" parent="." unique_id=514472334]
+position = Vector2(404, 189)
+scale = Vector2(0.031494133, 0.031494133)
+texture = ExtResource("23_1lp2a")
+
+[node name="Door1" type="Area2D" parent="." unique_id=1566876809]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Door1" unique_id=1947190253]
+position = Vector2(-434, 438.5)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("10_x61ay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1" unique_id=92108402]
+position = Vector2(57, 146.50006)
+shape = SubResource("CircleShape2D_x61ay")
+
+[node name="Door2" type="Area2D" parent="." unique_id=948128023]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Door2" unique_id=457337854]
+position = Vector2(521, 854)
+scale = Vector2(0.8305556, 0.8305556)
+texture = ExtResource("10_x61ay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2" unique_id=536250711]
+position = Vector2(1087, 511)
+shape = SubResource("CircleShape2D_1lp2a")
+
+[node name="Staircase" type="StaticBody2D" parent="." unique_id=278382470]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Staircase" unique_id=2119217985]
+position = Vector2(639.9999, 286.99997)
+scale = Vector2(0.7138889, 0.7138889)
+texture = ExtResource("7_gw4vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase" unique_id=420503110]
+position = Vector2(305, 528.25)
+shape = SubResource("RectangleShape2D_ke36w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Staircase" unique_id=1554559209]
+position = Vector2(789.3333, 160.5)
+scale = Vector2(0.7138889, 0.7138889)
+texture = ExtResource("7_gw4vb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Staircase" unique_id=272670982]
+position = Vector2(456.33325, 402.5)
+shape = SubResource("RectangleShape2D_jcvfs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Staircase" unique_id=2046790333]
+position = Vector2(547.3333, 60.499985)
+scale = Vector2(0.7138889, 0.7138889)
+texture = ExtResource("7_gw4vb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Staircase" unique_id=10203783]
+position = Vector2(213.33331, 303.99997)
+shape = SubResource("RectangleShape2D_1lp2a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Staircase" unique_id=1659047747]
+position = Vector2(392.3333, -15.499985)
+scale = Vector2(0.7138889, 0.7138889)
+texture = ExtResource("7_gw4vb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Staircase" unique_id=1581646865]
+position = Vector2(59.333252, 228.25)
+shape = SubResource("RectangleShape2D_lm71y")
+
+[node name="Limits" type="StaticBody2D" parent="." unique_id=19640171]
+
+[node name="E2" type="Sprite2D" parent="Limits" unique_id=1299700834]
 visible = false
 position = Vector2(577.6667, 322)
 scale = Vector2(0.59444445, 0.59444445)
 texture = ExtResource("4_uj47j")
 
-[node name="E3" type="Sprite2D" parent="." unique_id=1342924037]
-position = Vector2(578.00006, 330.00003)
-scale = Vector2(0.5962963, 0.5962963)
-texture = ExtResource("5_kamyq")
-
-[node name="E4" type="Sprite2D" parent="." unique_id=1646349442]
+[node name="E4" type="Sprite2D" parent="Limits" unique_id=1646349442]
 position = Vector2(578, 330.00003)
 scale = Vector2(0.5962963, 0.5962963)
 texture = ExtResource("6_rllcg")
 
-[node name="E5" type="Sprite2D" parent="." unique_id=1961499212]
-position = Vector2(579.44446, 323)
+[node name="Wall" type="Sprite2D" parent="Limits" unique_id=1342924037]
+position = Vector2(578.00006, 330.00003)
 scale = Vector2(0.5962963, 0.5962963)
-texture = ExtResource("7_gw4vb")
-
-[node name="Paper" type="Sprite2D" parent="." unique_id=974100368]
-position = Vector2(526, 288)
-scale = Vector2(0.65408695, 0.6587963)
-texture = ExtResource("8_jebls")
-
-[node name="Skele1" type="Sprite2D" parent="." unique_id=660346614]
-position = Vector2(566, 249)
-scale = Vector2(0.77592593, 0.77592593)
-texture = ExtResource("9_iw7dd")
-
-[node name="Skele2" type="Sprite2D" parent="." unique_id=626337627]
-position = Vector2(526, 248.99998)
-scale = Vector2(0.7814815, 0.7814815)
-texture = ExtResource("10_vr0pn")
-
-[node name="Skele3" type="Sprite2D" parent="." unique_id=1459163531]
-position = Vector2(490.00003, 256)
-scale = Vector2(0.7583333, 0.7583333)
-texture = ExtResource("11_pb0ys")
-
-[node name="oldman" type="CharacterBody2D" parent="." unique_id=260916356]
-position = Vector2(-93, 15)
-script = ExtResource("12_kamyq")
-
-[node name="Sprite2D" type="Sprite2D" parent="oldman" unique_id=1652016855]
-position = Vector2(936.5, 548.5)
-scale = Vector2(0.13276836, 0.08428577)
-texture = ExtResource("13_rllcg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oldman" unique_id=323500372]
-position = Vector2(936.125, 548.25)
-shape = SubResource("RectangleShape2D_iw7dd")
-
-[node name="kid" type="CharacterBody2D" parent="." unique_id=793943473]
-position = Vector2(-919, 13)
-script = ExtResource("14_gw4vb")
-
-[node name="Sprite2D" type="Sprite2D" parent="kid" unique_id=2014371253]
-position = Vector2(1042.5, 547.5)
-scale = Vector2(0.045918386, 0.066326536)
-texture = ExtResource("15_jebls")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kid" unique_id=1236463704]
-position = Vector2(1041.75, 547)
-shape = SubResource("RectangleShape2D_vr0pn")
-
-[node name="Limits" type="StaticBody2D" parent="." unique_id=19640171]
+texture = ExtResource("5_kamyq")
 
 [node name="Floor" type="CollisionShape2D" parent="Limits" unique_id=1538539505]
 position = Vector2(578.75, 623)
@@ -143,9 +216,79 @@ position = Vector2(576.5, -9.5)
 shape = SubResource("RectangleShape2D_jebls")
 
 [node name="MidWall" type="CollisionShape2D" parent="Limits" unique_id=726181958]
-position = Vector2(569, 426.5)
+position = Vector2(569, 297.5)
 shape = SubResource("RectangleShape2D_pb0ys")
 
-[node name="Floor2" type="CollisionShape2D" parent="Limits" unique_id=2002043340]
-position = Vector2(847.5, 232.25)
-shape = SubResource("RectangleShape2D_ke36w")
+[node name="Paper1" type="Area2D" parent="." unique_id=1609718913]
+position = Vector2(602, -7)
+script = ExtResource("17_iw7dd")
+
+[node name="Paper1" type="Sprite2D" parent="Paper1" unique_id=1871516745]
+position = Vector2(660.00006, 194)
+scale = Vector2(0.84537035, 0.84537035)
+texture = ExtResource("8_jebls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paper1" unique_id=1584556861]
+position = Vector2(84, 470.25)
+shape = SubResource("RectangleShape2D_x61ay")
+
+[node name="Label" type="Label" parent="Paper1" unique_id=1025201319]
+visible = false
+offset_left = 47.0
+offset_top = 188.0
+offset_right = 451.0
+offset_bottom = 315.0
+text = "One hid behind laughter.
+One hid behind money.
+One hid behind purity.
+But when death came, only one had nothing to hide.
+Put them in order and enter the code above."
+
+[node name="oldman" type="CharacterBody2D" parent="." unique_id=260916356]
+position = Vector2(-93, 15)
+script = ExtResource("12_kamyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="oldman" unique_id=1652016855]
+position = Vector2(910.5, 515.8617)
+scale = Vector2(0.27966106, 0.17753814)
+texture = ExtResource("13_rllcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oldman" unique_id=323500372]
+position = Vector2(908, 515.25)
+shape = SubResource("RectangleShape2D_iw7dd")
+
+[node name="kid" type="CharacterBody2D" parent="." unique_id=793943473]
+position = Vector2(-861, -7)
+script = ExtResource("14_gw4vb")
+
+[node name="Sprite2D" type="Sprite2D" parent="kid" unique_id=2014371253]
+position = Vector2(1017.99994, 527)
+scale = Vector2(0.12142857, 0.14520553)
+texture = ExtResource("15_jebls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kid" unique_id=1236463704]
+position = Vector2(1015, 528)
+shape = SubResource("RectangleShape2D_vr0pn")
+
+[node name="Jumpscare" type="CharacterBody2D" parent="." unique_id=1493140879]
+position = Vector2(237, 268)
+script = ExtResource("14_kamyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jumpscare" unique_id=919251803]
+position = Vector2(-18.220013, -16.220013)
+scale = Vector2(0.06857422, 0.06857422)
+texture = ExtResource("21_ke36w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpscare" unique_id=682243447]
+position = Vector2(-19, -12)
+shape = SubResource("CircleShape2D_iw7dd")
+
+[node name="PopupSprite" type="Sprite2D" parent="Jumpscare" unique_id=584609485]
+visible = false
+position = Vector2(336.5, 35.500008)
+scale = Vector2(9.1484375, 4.8359375)
+texture = ExtResource("16_rllcg")
+
+[connection signal="text_submitted" from="CodeInput" to="." method="_on_line_edit_text_submitted"]
+[connection signal="body_entered" from="Paper1" to="Paper1" method="_on_body_entered"]
+[connection signal="body_exited" from="Paper1" to="Paper1" method="_on_body_exited"]
