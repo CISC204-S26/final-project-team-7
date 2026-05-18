@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://datwhjlbbejhq" path="res://door open.png" id="16_jchmm"]
 [ext_resource type="Texture2D" uid="uid://bhthxp77einik" path="res://door.png" id="17_l27qf"]
 [ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="18_l27qf"]
+[ext_resource type="Script" uid="uid://t7gvbwrydlcw" path="res://Jumpscare.gd" id="19_es6pe"]
+[ext_resource type="Texture2D" uid="uid://dcq5x6jy5wfnt" path="res://Art/Escape Art/ghost.png" id="20_574vr"]
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="21_bydsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3o0tb"]
 size = Vector2(258.20578, 393.11993)
@@ -60,12 +63,22 @@ rough = true
 rough = true
 absorbent = true
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbk7s"]
+radius = 64.195015
+
 [node name="Node2D" type="Node2D" unique_id=1659527507]
 script = ExtResource("1_3o0tb")
 
 [node name="PBackground" type="Sprite2D" parent="." unique_id=904906985]
-position = Vector2(569, 317)
+position = Vector2(581, 334)
 texture = ExtResource("1_edrtp")
+
+[node name="Label" type="Label" parent="." unique_id=921386610]
+offset_left = 1081.0
+offset_top = 484.0
+offset_right = 1201.0
+offset_bottom = 507.0
+text = "Read Me"
 
 [node name="Exitsign" type="Sprite2D" parent="." unique_id=1209816935]
 position = Vector2(58.999817, 282.00003)
@@ -155,11 +168,10 @@ shape = SubResource("RectangleShape2D_12v2d")
 position = Vector2(1193, 314)
 shape = SubResource("RectangleShape2D_i8pi6")
 
-[node name="button" type="Area2D" parent="." unique_id=1266101424 node_paths=PackedStringArray("spawn_point")]
+[node name="button" type="Area2D" parent="." unique_id=1266101424]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("14_mxm7m")
-spawn_point = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=1185788425]
 position = Vector2(190, 405.5)
@@ -177,6 +189,7 @@ texture = ExtResource("17_l27qf")
 
 [node name="oldman" type="CharacterBody2D" parent="." unique_id=1810932352 groups=["oldman"]]
 z_index = 2
+position = Vector2(124, 12)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_2y8fq")
@@ -191,6 +204,7 @@ position = Vector2(936.125, 548.25)
 shape = SubResource("RectangleShape2D_2y8fq")
 
 [node name="kid" type="CharacterBody2D" parent="." unique_id=405516588]
+position = Vector2(-116, 13)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("3_osusr")
@@ -233,6 +247,25 @@ texture = ExtResource("9_i8pi6")
 position = Vector2(781.4375, 503.00003)
 scale = Vector2(0.23512502, 0.18499999)
 polygon = PackedVector2Array(500, 500, 500, 494.2, -495, -499.9, -500, -500, -500, 500)
+
+[node name="Jumpscare" type="CharacterBody2D" parent="." unique_id=396546491]
+position = Vector2(948, 391)
+script = ExtResource("19_es6pe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jumpscare" unique_id=1617364934]
+position = Vector2(-18.220013, -16.220013)
+scale = Vector2(0.06857422, 0.06857422)
+texture = ExtResource("20_574vr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpscare" unique_id=1749122415]
+position = Vector2(-19, -12)
+shape = SubResource("CircleShape2D_sbk7s")
+
+[node name="PopupSprite" type="Sprite2D" parent="Jumpscare" unique_id=1087978961]
+visible = false
+position = Vector2(336.5, 35.500008)
+scale = Vector2(9.1484375, 4.8359375)
+texture = ExtResource("21_bydsq")
 
 [connection signal="body_entered" from="dooropen" to="dooropen" method="_on_body_entered"]
 [connection signal="body_exited" from="dooropen" to="dooropen" method="_on_body_exited"]
