@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if player_inside and Input.is_action_just_pressed("Interact"):
+	if player_inside:
 		if front_door_sprite and front_door_sprite.visible == false:
 			interact_with_hidden_object()
 		else:
