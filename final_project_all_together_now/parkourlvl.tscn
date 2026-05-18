@@ -2,17 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://nku13f8uy0l7" path="res://oldmanplaceholder.webp" id="1_1nr0x"]
 [ext_resource type="Script" uid="uid://df0c6tevbnkk6" path="res://oldman.gd" id="1_2y8fq"]
+[ext_resource type="Script" uid="uid://1tgncsiuewe2" path="res://parkourlvl.gd" id="1_3o0tb"]
 [ext_resource type="Texture2D" uid="uid://clcb6f0kjjnvx" path="res://Art/Parkour Art/PBackground.png" id="1_edrtp"]
 [ext_resource type="Texture2D" uid="uid://c8285r57tycva" path="res://kidplaceholder.webp" id="2_fdli5"]
+[ext_resource type="Script" uid="uid://c0j1c15sfwu8a" path="res://dooropen.gd" id="3_l27qf"]
 [ext_resource type="Texture2D" uid="uid://rnj05bpy60ys" path="res://Art/Parkour Art/PFloor.png" id="3_nd7xp"]
 [ext_resource type="Script" uid="uid://rn5y8s1ojmfu" path="res://kid.gd" id="3_osusr"]
 [ext_resource type="Texture2D" uid="uid://nhubx0r7ddin" path="res://Art/Parkour Art/PLanding1.png" id="4_ru6l1"]
 [ext_resource type="Texture2D" uid="uid://p8r27tgych4l" path="res://Art/Parkour Art/PLanding2.png" id="5_jchmm"]
 [ext_resource type="Script" uid="uid://dhy21scfb5ity" path="res://paper.gd" id="6_3o0tb"]
-[ext_resource type="Texture2D" uid="uid://c4xfxm2qjpbbu" path="res://Art/Parkour Art/PSquare.png" id="6_l27qf"]
-[ext_resource type="Texture2D" uid="uid://b4tuj5oa0aa0x" path="res://Art/Parkour Art/PLanding3.png" id="7_3o0tb"]
-[ext_resource type="Texture2D" uid="uid://i6g6u2kbpwlo" path="res://Art/Parkour Art/Portal.png" id="8_mxm7m"]
-[ext_resource type="Texture2D" uid="uid://cj8e8mdk7fhvq" path="res://emre.webp" id="8_t84jd"]
 [ext_resource type="Texture2D" uid="uid://btrdnhdfete1u" path="res://Art/Parkour Art/Button.png" id="9_es6pe"]
 [ext_resource type="Texture2D" uid="uid://fduf845jkj16" path="res://triangleph.png" id="9_i8pi6"]
 [ext_resource type="Script" uid="uid://d2utxow46ya0n" path="res://portalenter.gd" id="14_mxm7m"]
@@ -21,29 +19,17 @@
 [ext_resource type="Texture2D" uid="uid://bhthxp77einik" path="res://door.png" id="17_l27qf"]
 [ext_resource type="Texture2D" uid="uid://bnj5lf4ie6nt8" path="res://Art/Escape Art/Paper.png" id="18_l27qf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o0tb"]
+size = Vector2(258.20578, 393.11993)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxm7m"]
 size = Vector2(57.5, 81)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru6l1"]
-size = Vector2(78, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t84jd"]
 size = Vector2(190, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r568j"]
 size = Vector2(160.35745, 36.999992)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbx1k"]
-size = Vector2(13.263535, 65.69211)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_edrtp"]
-size = Vector2(16.133015, 23.550009)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd7xp"]
-size = Vector2(16.133015, 25.820284)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0grp"]
-size = Vector2(16.133015, 12.602774)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osusr"]
 size = Vector2(130, 666)
@@ -57,16 +43,8 @@ size = Vector2(1315, 149)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8pi6"]
 size = Vector2(76, 738)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0grp"]
-radius = 32.0
-height = 92.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fbx1k"]
-radius = 42.0
-height = 116.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bydsq"]
-size = Vector2(77, 41)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es6pe"]
+size = Vector2(62, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y8fq"]
 size = Vector2(47.75, 60.5)
@@ -83,25 +61,29 @@ rough = true
 absorbent = true
 
 [node name="Node2D" type="Node2D" unique_id=1659527507]
+script = ExtResource("1_3o0tb")
 
 [node name="PBackground" type="Sprite2D" parent="." unique_id=904906985]
 position = Vector2(569, 317)
 texture = ExtResource("1_edrtp")
 
 [node name="Exitsign" type="Sprite2D" parent="." unique_id=1209816935]
-position = Vector2(864, 16)
+position = Vector2(58.999817, 282.00003)
 scale = Vector2(0.15731059, 0.16285715)
 texture = ExtResource("15_nd7xp")
 
-[node name="DoorClose" type="Sprite2D" parent="." unique_id=113831431]
-position = Vector2(870, 112)
+[node name="dooropen" type="Area2D" parent="." unique_id=1762860742 node_paths=PackedStringArray("front_door_sprite")]
+position = Vector2(62.000008, 371)
 scale = Vector2(0.22849996, 0.2035)
-texture = ExtResource("16_jchmm")
+script = ExtResource("3_l27qf")
+front_door_sprite = NodePath("../button/doorclose")
 
-[node name="DoorOpen" type="Sprite2D" parent="." unique_id=1641389879]
-position = Vector2(870, 112)
-scale = Vector2(0.22849996, 0.2035)
-texture = ExtResource("17_l27qf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dooropen" unique_id=1376425465]
+position = Vector2(-2.188202, 4.9138184)
+shape = SubResource("RectangleShape2D_3o0tb")
+
+[node name="DoorClose" type="Sprite2D" parent="dooropen" unique_id=113831431]
+texture = ExtResource("16_jchmm")
 
 [node name="paper" type="Area2D" parent="." unique_id=469217953]
 position = Vector2(1481, 273)
@@ -124,24 +106,10 @@ offset_right = -335.0
 offset_bottom = 204.0
 text = "No old man should be doing parkour, 
 maybe a ramp would help... 
-No kid should be using portals (at least, not yet), 
-maybe an old man would help... 
 
 Stuck? Use R to reset the level"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="helper" type="Area2D" parent="." unique_id=1830284271]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="helper" unique_id=87207947]
-position = Vector2(883, 99.125)
-scale = Vector2(0.14843756, 0.10731357)
-texture = ExtResource("8_t84jd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="helper" unique_id=1773584922]
-position = Vector2(881, 97)
-shape = SubResource("RectangleShape2D_ru6l1")
 
 [node name="barriers" type="StaticBody2D" parent="." unique_id=357506400]
 collision_layer = 15
@@ -171,46 +139,6 @@ position = Vector2(-1780.8824, 159)
 scale = Vector2(3.9811277, 0.9221724)
 texture = ExtResource("5_jchmm")
 
-[node name="platformcoll3" type="CollisionShape2D" parent="barriers" unique_id=108817171]
-position = Vector2(12.229004, 359)
-scale = Vector2(9.917552, 1.613588)
-shape = SubResource("RectangleShape2D_fbx1k")
-
-[node name="platform3" type="Sprite2D" parent="barriers" unique_id=211728984]
-position = Vector2(-25.499737, 334.73303)
-scale = Vector2(0.98281235, 0.7809871)
-texture = ExtResource("6_l27qf")
-
-[node name="platformcoll4" type="CollisionShape2D" parent="barriers" unique_id=669744455]
-position = Vector2(218, 244)
-scale = Vector2(9.917552, 1.613588)
-shape = SubResource("RectangleShape2D_edrtp")
-
-[node name="platform4" type="Sprite2D" parent="barriers" unique_id=359137116]
-position = Vector2(79, 423.99994)
-scale = Vector2(0.29746044, 0.65051115)
-texture = ExtResource("7_3o0tb")
-
-[node name="platformcoll5" type="CollisionShape2D" parent="barriers" unique_id=1335611266]
-position = Vector2(447, 203)
-scale = Vector2(8.285212, 1.7815455)
-shape = SubResource("RectangleShape2D_nd7xp")
-
-[node name="platform5" type="Sprite2D" parent="barriers" unique_id=1271955614]
-position = Vector2(341.5, 370)
-scale = Vector2(0.23697919, 0.60955256)
-texture = ExtResource("7_3o0tb")
-
-[node name="platformcoll6" type="CollisionShape2D" parent="barriers" unique_id=1869960525]
-position = Vector2(1187, 177)
-scale = Vector2(68.64473, 3.1739044)
-shape = SubResource("RectangleShape2D_k0grp")
-
-[node name="platform6" type="Sprite2D" parent="barriers" unique_id=855339926]
-position = Vector2(243.99998, 395)
-scale = Vector2(2.4408891, 0.79218113)
-texture = ExtResource("7_3o0tb")
-
 [node name="left" type="CollisionShape2D" parent="barriers" unique_id=1961944794]
 position = Vector2(-66, 325)
 shape = SubResource("RectangleShape2D_osusr")
@@ -227,44 +155,25 @@ shape = SubResource("RectangleShape2D_12v2d")
 position = Vector2(1193, 314)
 shape = SubResource("RectangleShape2D_i8pi6")
 
-[node name="portalexit" type="Area2D" parent="." unique_id=2076055363]
-collision_layer = 15
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portalexit" unique_id=2009146936]
-position = Vector2(1096, 106)
-shape = SubResource("CapsuleShape2D_k0grp")
-
-[node name="Sprite2D" type="Sprite2D" parent="portalexit" unique_id=1803221125]
-position = Vector2(777, 318)
-scale = Vector2(0.46497396, 0.5384537)
-texture = ExtResource("8_mxm7m")
-
-[node name="portalenter" type="Area2D" parent="." unique_id=1266101424 node_paths=PackedStringArray("spawn_point")]
+[node name="button" type="Area2D" parent="." unique_id=1266101424 node_paths=PackedStringArray("spawn_point")]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("14_mxm7m")
-spawn_point = NodePath("../Marker2D")
+spawn_point = NodePath("")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portalenter" unique_id=1185788425]
-position = Vector2(217, 362)
-shape = SubResource("CapsuleShape2D_fbx1k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=1185788425]
+position = Vector2(190, 405.5)
+shape = SubResource("RectangleShape2D_es6pe")
 
-[node name="Sprite2D" type="Sprite2D" parent="portalenter" unique_id=1048724856]
-position = Vector2(-88.00001, 574.00006)
-scale = Vector2(0.4472656, 0.52456486)
-texture = ExtResource("8_mxm7m")
-
-[node name="button" type="Area2D" parent="." unique_id=2016359189]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=803619227]
-position = Vector2(717.5, 150.5)
-shape = SubResource("RectangleShape2D_bydsq")
-
-[node name="Sprite2D" type="Sprite2D" parent="button" unique_id=1290268860]
-position = Vector2(183.00003, -362)
-scale = Vector2(1.0507813, 1.9532405)
+[node name="button" type="Sprite2D" parent="button" unique_id=1048724856]
+position = Vector2(-228.99988, 71.00003)
+scale = Vector2(0.82675785, 1.2456158)
 texture = ExtResource("9_es6pe")
+
+[node name="doorclose" type="Sprite2D" parent="button" unique_id=1641389879]
+position = Vector2(62.00006, 371)
+scale = Vector2(0.22849996, 0.2035)
+texture = ExtResource("17_l27qf")
 
 [node name="oldman" type="CharacterBody2D" parent="." unique_id=1810932352 groups=["oldman"]]
 z_index = 2
@@ -325,10 +234,9 @@ position = Vector2(781.4375, 503.00003)
 scale = Vector2(0.23512502, 0.18499999)
 polygon = PackedVector2Array(500, 500, 500, 494.2, -495, -499.9, -500, -500, -500, 500)
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1599607916]
-position = Vector2(977, 100)
-
+[connection signal="body_entered" from="dooropen" to="dooropen" method="_on_body_entered"]
+[connection signal="body_exited" from="dooropen" to="dooropen" method="_on_body_exited"]
 [connection signal="body_entered" from="paper" to="paper" method="_on_body_entered"]
 [connection signal="body_exited" from="paper" to="paper" method="_on_body_exited"]
-[connection signal="body_entered" from="portalenter" to="portalenter" method="_on_body_entered"]
-[connection signal="body_exited" from="portalenter" to="portalenter" method="_on_body_exited"]
+[connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
+[connection signal="body_exited" from="button" to="button" method="_on_body_exited"]
